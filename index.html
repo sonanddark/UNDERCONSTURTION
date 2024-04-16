@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSN IS UNDER-WRK</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: linear-gradient(45deg, #ff0000, #ff7700, #ffcc00, #00ff00, #0000ff, #ff00ff, #ff0000);
+            background-size: 600% 600%;
+            animation: rainbow 10s ease infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 100%;
+            }
+            50% {
+                background-position: 100% 0%;
+            }
+            100% {
+                background-position: 0% 100%;
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #followCursor {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px; /* Adjust image width */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/POVHSNFR.jpg" alt="Follow Cursor" id="followCursor">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var cursor = document.getElementById("followCursor");
+
+            document.addEventListener("mousemove", function(e) {
+                var x = e.clientX;
+                var y = e.clientY;
+
+                cursor.style.left = x + "px";
+                cursor.style.top = y + "px";
+            });
+        });
+    </script>
+</body>
+</html>
